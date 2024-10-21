@@ -1,0 +1,154 @@
+:root {
+	--max-w-xl: 1280px;
+	--max-w-lg: 1024px;
+
+	--primary: #c62e2e;
+	--secondary: #f95454;
+	--tertiary: #77cdff;
+	--light: #feeeef;
+	--dark: #0f0f0f;
+
+	--vh-primary: 92.5vh;
+	--vh-secondary: 7.5vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+    scroll-padding-top: var(--vh-secondary);
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background: var(--tertiary);
+	color: var(--dark);
+}
+
+header {
+	background: var(--primary);
+	color: var(--light);
+    box-shadow: 0 0 10px var(--dark);
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    
+}
+
+.header {
+	height: var(--vh-secondary);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header div h1 {
+	padding: 0;
+	margin: 0;
+}
+
+.header nav ul {
+	list-style: none;
+
+	display: flex;
+	gap: 16px;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: var(--light);
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+        content: "";
+        width: 0;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        background: var(--tertiary);
+        transition: all .25s ease;
+
+    }
+
+    &:hover {
+        color: rgb(193, 193, 193);
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background: var(--primary);
+    color: var(--light);
+    box-shadow: 0 0 10px var(--dark);
+    padding: 14px 24px;
+    text-align: center;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+
+    &>p>a {
+        color: var(--tertiary);
+    }
+
+}
+
+.game-container {
+    height: var(--vh-primary);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &>div {
+        border: solid 1px black;
+
+        position: relative;
+    }
+
+    &>.game-container-div1 {
+        width: 33.33%;
+        height: 100%;
+    }
+    &>.game-container-div2 {
+        width: 33.33%;
+        height: 100%;
+    }
+    
+    &>.game-container-div3 {
+        width: 33.33%;
+        height: 100%;
+    }
+}
+
+.hand {
+    width: 200px;
+    height: 200px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
