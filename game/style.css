@@ -97,6 +97,7 @@ header {
 
 footer {
     width: 100%;
+    height: var(--vh-secondary);
     background: var(--primary);
     color: var(--light);
     box-shadow: 0 0 10px var(--dark);
@@ -108,14 +109,20 @@ footer {
     left: 0;
     z-index: 9999;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     &>p>a {
         color: var(--tertiary);
+        padding: 0;
+        margin: 0;
     }
 
 }
 
 .game-container {
-    height: var(--vh-primary);
+    height: calc(var(--vh-primary) - var(--vh-secondary));
 
     display: flex;
     flex-direction: row;
@@ -131,19 +138,63 @@ footer {
     &>.game-container-div1 {
         width: 33.33%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
     &>.game-container-div2 {
         width: 33.33%;
         height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+
+        &>.choices-container {
+            margin: 16px 24px;
+            padding: 0 24px;
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 16px;
+
+            &>button {
+                padding: 12px 24px;
+                width: 30%;
+                background: var(--primary);
+                color: var(--light);
+                border: solid 1px var(--dark);
+                border-radius: 8px;
+
+                transition: all .25s ease;
+
+                &:hover {
+                    background: var(--secondary);
+                    cursor: pointer;
+
+                    transform: translateY(-4px);
+                }
+            }
+        }
+
     }
     
     &>.game-container-div3 {
         width: 33.33%;
         height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
-.hand {
+.vs {
     width: 200px;
     height: 200px;
 
@@ -151,4 +202,27 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.hand {
+    width: 200px;
+    height: 200px;
+}
+
+.toss {
+    animation: toss 1.5s ease;
+}
+
+@keyframes toss {
+    0% {
+        transform: translateY(0px);
+    } 33.33% {
+        transform: translateY(-20px);
+    } 50% {
+        transform: translateY(0px);
+    } 66.66% {
+        transform: translateY(-20px);
+    } 100% {
+        transform: translateY(0px);
+    }
 }
