@@ -53,18 +53,26 @@
 								>Game</a
 							>
 						</li>
+						<li>
+							<a
+								href="/history/index.html"
+								class="underline-hover"
+							>History</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
 		</header>
 
-        <main>
+        <main class="bg-box">
             <section class="game-container">
                 <div class="game-container-div1">
+					<h1 id="player-score">SCORE: 0</h1>
                     <img src="../assets/v1rock.svg" alt="" class="hand" id="player-hand">
                 </div>
                 <div class="game-container-div2">
                     <img src="../assets/vs.svg" alt="" class="vs">
+					<h1 id="round">ROUND: 1</h1>
 					<div class="choices-container">
 						<button class="button" id="rock" onclick="rock(event)">Rock</button>
 						<button class="button" id="paper" onclick="paper(event)">Paper</button>
@@ -72,7 +80,8 @@
 					</div>
                 </div>
                 <div class="game-container-div3">
-                    <img src="../assets/v1rock.svg" alt="" class="hand">
+					<h1 id="robot-score">SCORE: 0</h1>
+                    <img src="../assets/v1rock.svg" alt="" class="hand" id="robot-hand">
                 </div>
             </section>
         </main>

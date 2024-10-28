@@ -31,7 +31,7 @@
 .section-padding {
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
-    /* min-height: var(--vh-primary); */
+    min-height: var(--vh-primary);
 }
 
 .flex-1 {

@@ -139,9 +139,23 @@ footer {
         width: 33.33%;
         height: 100%;
 
+        position: relative;
+
         display: flex;
         justify-content: center;
         align-items: center;
+
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: var(--primary);
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
     }
 
     &>.game-container-div2 {
@@ -153,7 +167,14 @@ footer {
         justify-content: end;
         align-items: center;
 
-        &>.choices-container {
+        h1 {
+            font-size: 58px;
+            font-weight: bold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: var(--primary);
+        }
+
+        .choices-container {
             margin: 16px 24px;
             padding: 0 24px;
             width: 100%;
@@ -191,6 +212,18 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: var(--primary);
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
     }
 }
 
@@ -205,8 +238,9 @@ footer {
 }
 
 .hand {
-    width: 200px;
-    height: 200px;
+    width: 375px;
+    height: 375px;
+    filter: drop-shadow(0 0 2.5px var(--dark));
 }
 
 .toss {
@@ -215,14 +249,14 @@ footer {
 
 @keyframes toss {
     0% {
-        transform: translateY(0px);
+        transform: translateY(0px) scale(1);
     } 33.33% {
-        transform: translateY(-20px);
+        transform: translateY(-20px) scale(0.75);
     } 50% {
-        transform: translateY(0px);
+        transform: translateY(0px) scale(0.80);
     } 66.66% {
-        transform: translateY(-20px);
+        transform: translateY(-20px) scale(0.75);
     } 100% {
-        transform: translateY(0px);
+        transform: translateY(0px) scale(0.95);
     }
 }
