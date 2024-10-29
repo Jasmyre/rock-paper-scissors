@@ -19,7 +19,7 @@
 		<!-- <script src="https://cdn.tailwindcss.com"></script> -->
 		 <script src="./index.js" defer></script>
 	</head>
-	<body>
+	<body class="">
 		<header>
 			<div class="header section-xl">
 				<div>
@@ -53,12 +53,6 @@
 								>Game</a
 							>
 						</li>
-						<li>
-							<a
-								href="../history/index.html"
-								class="underline-hover"
-							>History</a>
-						</li>
 					</ul>
 				</nav>
 			</div>
@@ -74,9 +68,9 @@
                     <img src="../assets/vs.svg" alt="" class="vs">
 					<h1 id="round">ROUND: 1</h1>
 					<div class="choices-container">
-						<button class="button" id="rock" onclick="rock(event)">Rock</button>
-						<button class="button" id="paper" onclick="paper(event)">Paper</button>
-						<button class="button" id="scissors" onclick="scissors(event)">Scissors</button>
+						<input type="button" class="button" id="rock" onclick="rock(event)" value="Rock"/>
+						<input type="button" class="button" id="paper" onclick="paper(event)" value="Paper"/>
+						<input type="button" class="button" id="scissors" onclick="scissors(event)" value="Scissors"/>
 					</div>
                 </div>
                 <div class="game-container-div3">

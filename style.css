@@ -45,6 +45,12 @@ header {
     
 }
 
+.page2 {
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+}
+
 .header {
 	height: var(--vh-secondary);
 

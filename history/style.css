@@ -184,3 +184,35 @@ footer {
     }
 
 }
+
+.winner-section-wrapper {
+    height: 30vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-size: 50px;
+        background: var(--primary);
+        color: var(--light);
+        padding: 24px 40px;        
+        border-radius: 0.5rem;
+    }
+
+    a {
+        background: var(--primary);
+        color: var(--light);
+        padding: 14px 24px;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        border: solid 1px var(--dark);
+        transition: all .25s ease;
+
+        &:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+    }
+}

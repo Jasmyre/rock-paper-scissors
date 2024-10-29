@@ -69,7 +69,10 @@ const rock = (e) => {
   playerHand.classList.add("toss");
   robotHand.classList.add("toss");
 
-  button.disabled = true;
+  button.forEach((button) => {
+    button.disabled = true;
+  });
+  log(button)
 
   setTimeout(() => {
     playerHand.src = rockSrc;
@@ -95,8 +98,18 @@ const rock = (e) => {
       log(result);
     }
 
+    if ( playerScoreNum >= 3 ) {
+      window.location.href = "/rock-paper-scissors/history/index.html?playerWon=true"
+    } else if ( robotScoreNum >= 3 ) {
+      window.location.href = "/rock-paper-scissors/history/index.html?playerWon=false"
+    }
+
     roundNum++;
     updateRound();
+
+    button.forEach((button) => {
+      button.disabled = false;
+    });
   }, 1400);
 };
 
@@ -120,6 +133,10 @@ const paper = (e) => {
 
   playerHand.classList.add("toss");
   robotHand.classList.add("toss");
+
+  button.forEach((button) => {
+    button.disabled = true;
+  });
 
   setTimeout(() => {
     playerHand.src = paperSrc;
@@ -145,8 +162,18 @@ const paper = (e) => {
       log(result);
     }
 
+    if ( playerScoreNum >= 3 ) {
+      window.location.href = "/rock-paper-scissors/history/index.html?playerWon=true"
+    } else if ( robotScoreNum >= 3 ) {
+      window.location.href = "/rock-paper-scissors/history/index.html?playerWon=false"
+    }
+
     roundNum++;
     updateRound();
+
+    button.forEach((button) => {
+      button.disabled = false;
+    });
   }, 1400);
 };
 
@@ -170,6 +197,10 @@ const scissors = (e) => {
 
   playerHand.classList.add("toss");
   robotHand.classList.add("toss");
+
+  button.forEach((button) => {
+    button.disabled = true;
+  });
 
   setTimeout(() => {
     playerHand.src = scissorsSrc;
@@ -195,8 +226,18 @@ const scissors = (e) => {
       log(result);
     }
 
+    if ( playerScoreNum >= 3 ) {
+      window.location.href = "/rock-paper-scissors/history/index.html?playerWon=true"
+    } else if ( robotScoreNum >= 3 ) {
+      window.location.href = "/rock-paper-scissors/history/index.html?playerWon=false"
+    }
+
     roundNum++;
     updateRound();
+
+    button.forEach((button) => {
+      button.disabled = false;
+    });
   }, 1400);
 };
 
