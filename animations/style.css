@@ -1,0 +1,213 @@
+:root {
+	--max-w-xl: 1280px;
+	--max-w-lg: 1024px;
+
+	--primary: #c62e2e;
+	--secondary: #f95454;
+	--tertiary: #77cdff;
+	--light: #feeeef;
+	--dark: #0f0f0f;
+
+	--vh-primary: 92.5vh;
+	--vh-secondary: 7.5vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+	scroll-behavior: smooth;
+    scroll-padding-top: var(--vh-secondary);
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background: var(--tertiary);
+	color: var(--dark);
+
+    /* * STATIC POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+    position: static;
+}
+
+header {
+	background: var(--primary);
+	color: var(--light);
+    box-shadow: 0 0 10px var(--dark);
+
+    /* * STICKY POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    
+}
+
+.page2 {
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+	height: var(--vh-secondary);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header div h1 {
+	padding: 0;
+	margin: 0;
+}
+
+.header nav ul {
+	list-style: none;
+
+	display: flex;
+	gap: 16px;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: var(--light);
+
+    /* * RELATIVE POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+        content: "";
+        width: 0;
+        height: 1px;
+
+        /* * ABSOLUTE POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+        position: absolute;
+        bottom: 0;
+        background: var(--tertiary);
+        transition: all .25s ease;
+
+    }
+
+    /* * HOVER POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+    &:hover {
+        color: rgb(193, 193, 193);
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background: var(--primary);
+    color: var(--light);
+    box-shadow: 0 0 10px var(--dark);
+    padding: 14px 24px;
+    text-align: center;
+
+    /* * FIXED POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+
+    &>p>a {
+        color: var(--tertiary);
+    }
+
+}
+
+#heading-title {
+    /* * FIXED POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+    position: fixed;
+    left: 100%;
+
+    animation: sliding 5s 2.5s infinite;
+    
+    /* * HOVER POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.hero div {
+    padding: 20px 0;
+}
+
+.box {
+    border: solid 1px rgba(255, 0, 0, .5);
+
+    .children {
+        height: 150px;
+        width: 150px;
+        background: var(--dark);
+        transition: all .25s ease;
+        cursor: pointer;
+    }
+
+
+    /* * HOVER POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+    &:hover {
+        &#translate {
+            .children {
+                transform: translate(-20px, -20px);
+                border-radius: 12px;
+            }
+        }
+
+        &#rotate {
+            .children {
+                transition: all 1s ease-out;
+                transform: rotate(90deg);
+                border-radius: 12px;
+            }
+        }
+
+        &#scale {
+            .children {
+                transform: scale(1.25);
+                border-radius: 12px;
+            }
+        }
+
+        &#skew {
+            .children {
+                transform: skew(10deg);
+                border-radius: 12px;
+            }
+        }
+    }
+}
+
+#anim-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-sm {
+    padding: 80px 20px;
+}
+
+@keyframes sliding {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -50%;
+    }
+}

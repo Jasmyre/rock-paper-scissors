@@ -31,6 +31,9 @@ body {
 	margin: 0;
 	background: var(--tertiary);
 	color: var(--dark);
+
+    /* * STATIC POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+    position: static;
 }
 
 header {
@@ -38,6 +41,7 @@ header {
 	color: var(--light);
     box-shadow: 0 0 10px var(--dark);
 
+    /* * STICKY POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
     position: sticky;
     top: 0;
     left: 0;
@@ -68,6 +72,8 @@ header {
 .header nav ul li a {
     text-decoration: none;
     color: var(--light);
+
+    /* * RELATIVE POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
     position: relative;
 
     display: flex;
@@ -79,6 +85,8 @@ header {
         content: "";
         width: 0;
         height: 1px;
+
+        /* * ABSOLUTE POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
         position: absolute;
         bottom: 0;
         background: var(--tertiary);
@@ -86,6 +94,7 @@ header {
 
     }
 
+    /* * HOVER ANIMATION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
     &:hover {
         color: rgb(193, 193, 193);
 
@@ -104,6 +113,7 @@ footer {
     padding: 14px 24px;
     text-align: center;
 
+    /* * FIXED POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
     position: fixed;
     bottom: 0;
     left: 0;
@@ -119,6 +129,28 @@ footer {
         margin: 0;
     }
 
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        &:hover {
+            cursor: pointer;
+            /* * SCALE, TRANSLATE, ROTATE, SKEW HOVER TRANSFORM ANIMATION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+            transform: scale(1.5) translate(0, 20px) rotate(360deg) skew(10deg);
+        }
+    }
+}
+
+.hero img {
+    width: 150px;
+    height: 150px;
+
+    /* * TRANSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz  */
+    transition: all .25s ease;
 }
 
 .history {
@@ -139,11 +171,20 @@ footer {
             color: white;
             border: solid 1px var(--dark);
 
+
+            /* * RELATIVE POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
             position: relative;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            transition: all.25s ease;
+
+            /* * HOVER ANIMATION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+            &:hover {
+                transform: translateY(-10px);
+            }
 
             .item-info {
                 display: flex;
@@ -151,6 +192,8 @@ footer {
             }
 
             .item-winner {
+
+                /* * ABSOLUTE POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
                 position: absolute;
                 right: 2rem;
             }
@@ -170,6 +213,7 @@ footer {
     border: solid 1px var(--dark);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     
+    /* * FIXED POSITION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
     position: fixed;
     right: 15%;
     left: 85%;
@@ -178,6 +222,7 @@ footer {
     transition: all .25s ease;
     cursor: pointer;
 
+    /* * HOVER ANIMATION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
     &:hover {
         background: var(--secondary);
         bottom: calc(var(--vh-secondary) + 1rem + 8px);
@@ -210,6 +255,7 @@ footer {
         border: solid 1px var(--dark);
         transition: all .25s ease;
 
+        /* * HOVER ANIMATION zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
         &:hover {
             background: var(--secondary);
             transform: translateY(-5px);

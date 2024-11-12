@@ -1,6 +1,7 @@
 :root {
 	--max-w-xl: 1280px;
 	--max-w-lg: 1024px;
+    --max-w-sm: 720px;
 
 	--primary: #c62e2e;
 	--secondary: #f95454;
@@ -28,10 +29,23 @@
     padding-right: 2.5rem;
 }
 
+.section-sm {
+    max-width: var(--max-w-sm);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
 .section-padding {
     padding-top: 7.5rem;
     padding-bottom: 7.5rem;
     min-height: var(--vh-primary);
+}
+
+.padding-y {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
 }
 
 .flex-1 {
@@ -79,4 +93,8 @@
             width: 100%;
         }
     }
+}
+
+.text-center {
+    text-align: center;
 }
